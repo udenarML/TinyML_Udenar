@@ -1,11 +1,12 @@
-MACHINE LEARNING  EN MICROCONTROLADORES.
+##MACHINE LEARNING  EN MICROCONTROLADORES.
 
-En este respositorio se incluye una guia introductoria para el manejo de herramientas para el desarrollo de aplicaciones de TinyML.
-Esta guia esta compuesta por varios ejemplos utilizando sensores, placas de desarrollo y herramientas de programacion como tensorflow lite y Edge impulse.
+Este repositorio contiene una guía para iniciar con el desarrollo de modelos de machine learning en microcontroladores usando diferentes herramientas como Tensorflow lite, Google colab y Edge impulse.
 
-Ejemplos actualmente contruidos:
-  * regrecion de una onda seno con machine learning.
-  * clasificador de objetos con el sensor de color APDS9960.
-  * clasificacion de movimientos con acelerometro usando  tensorflow lite.
-  * sistema de control de una silla de ruedas para paraplicos con tinyML.
-    
+##caracteristicas.
+#* para que el uso de este repositorio y estas técnicas de tinyML se han creado varios ejemplos fáciles de entender.
+•	Regresión de una onda seno (hello world del tinyML).
+•	Clasificación de objetos con el sensor APDS9960.
+•	Reconocimiento de gestos de la mano con un sensor acelerómetro.
+•	Sistema de control de desplazamiento para personas cuadripléjicas.
+
+
