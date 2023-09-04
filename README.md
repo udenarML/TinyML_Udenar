@@ -10,4 +10,19 @@ Este repositorio contiene una guía para iniciar con el desarrollo de modelos de
 3.	Reconocimiento de gestos de la mano con un sensor acelerómetro.
 4.	Sistema de control de desplazamiento para personas cuadripléjicas.
 
+## Implementación.
+
+Descargue este repositorio, extráigalo y escoja el ejemplo que desee. Ahí encontrara la explicación de cómo hacerlo.
+
+## Instalación.
+
+-	Arduino nano 33 BLE sense.
+-	Esp32.
+-	Raspberry Pi Pico.
+-	Librería Tensorflow lite para Arduino.
+-	Librería Tensorflow lite Esp32.
+-	Coolterm.
+-	Google Colab.
+-	Edge Impulse.
+
 
