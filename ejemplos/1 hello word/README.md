@@ -119,5 +119,16 @@ plt.ylabel('loss')
 plt.legend()
 plt.show()
 ```
-![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/tabla%20imagen%20entrenamiento.PNG
-)
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/resultado.png)
+Para obtener más información sobre lo que está sucediendo, podemos trazar las predicciones de nuestra red para los datos de entrenamiento frente a los valores esperados:
+```
+prediccion= modelo1.predict(x_train)
+
+plt.clf
+plt.title('datos de entrenamiento vs datos del modelo')
+plt.plot(x_test, y_test, 'b.', label='Entrenamiento')
+plt.plot(x_train, prediccion, 'r.', label='Prediccion')
+plt.legend()
+plt.show()
+```
+![fff]()
