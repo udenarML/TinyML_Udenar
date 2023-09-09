@@ -101,4 +101,23 @@ El código de la siguiente celda usa los valores x e y de nuestros datos de entr
 history_1 = modelo1.fit(x_train, y_train, epochs=800, batch_size=16, validation_data=(x_validate, y_validate))
 ```
 
-![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/tabla%20arquitectura.PNG)
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/tabla%20imagen%20entrenamiento.PNG
+)
+
+#### Evaluar el desempeño.
+Durante el entrenamiento, el rendimiento del modelo se mide constantemente con nuestros datos de entrenamiento y los datos de validación que reservamos anteriormente. El entrenamiento produce un registro de datos que nos dice cómo cambió el rendimiento del modelo a lo largo del proceso de entrenamiento.
+
+Las siguientes celdas mostrarán algunos de esos datos en forma gráfica:
+```
+loss= history_1.history['loss']
+val_loss= history_1.history['val_loss']
+epocas= range(1, len(loss)+1)
+plt.plot(epocas, loss, 'g.', label='Training loss')
+plt.plot(epocas, val_loss, 'b.', label='Validation loss')
+plt.xlabel('Epocas')
+plt.ylabel('loss')
+plt.legend()
+plt.show()
+```
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/tabla%20imagen%20entrenamiento.PNG
+)
