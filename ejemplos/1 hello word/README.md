@@ -50,5 +50,25 @@ plt.rcParams["figure.figsize"] = (10,5)
 plt.plot(x_valores, y_valores, 'b.')
 plt.show()
 ```
-![fff]()
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/seno%20ruido.png)
 
+#### Dividir los datos.
+Para evaluar la precisión del modelo que entrenamos, necesitaremos comparar sus predicciones con datos reales y verificar qué tan bien coinciden. Esta evaluación ocurre durante el entrenamiento (donde se lo denomina validación) y después del entrenamiento (lo que se denomina prueba). En ambos casos, es importante que usemos datos nuevos que no se hayan usado para entrenar el modelo.
+
+Para asegurarnos de tener datos para usar en la evaluación, reservaremos algunos antes de comenzar la capacitación. Reservaremos el 20 % de nuestros datos para la validación y otro 20 % para las pruebas. El 60% restante se utilizará para entrenar el modelo. Esta es una división típica utilizada cuando se entrenan modelos.
+```
+TRAIN_SPLIT = int(0.6 * muestras)
+TEST_SPLIT = int(0.2 * muestras + TRAIN_SPLIT)
+
+x_train, x_validate, x_test = np.split(x_valores,[TRAIN_SPLIT, TEST_SPLIT])
+y_train, y_validate, y_test = np.split(y_valores,[TRAIN_SPLIT, TEST_SPLIT])
+
+assert (x_train.size + x_validate.size + x_test.size)== muestras
+plt.rcParams["figure.figsize"] = (10,5)
+plt.plot(x_train, y_train, 'b.', label="Train")
+plt.plot(x_validate, y_validate, 'y.', label="Validate")
+plt.plot(x_test, y_test, 'r.', label="Test")
+plt.legend()
+plt.show()
+```
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/seno%20ruido.png)
