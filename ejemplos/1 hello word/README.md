@@ -144,5 +144,6 @@ modelo2.add(layers.Dense(1))
 modelo2.compile(optimizer='rmsprop', loss='mse', metrics=['mae'])
 modelo2.summary()
 ```
-![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/foto%20prediccion.png)
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/tabla%20arquitectura%20nuevo.PNG)
+
 
