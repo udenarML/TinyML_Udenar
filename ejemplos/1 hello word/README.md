@@ -38,6 +38,6 @@ plt.rcParams["figure.figsize"] = (10,5)
 plt.plot(x_valores, y_valores,'b.')
 plt.show()
 ```
-[fff](ejemplos/1 hello word/imagenes/foto prediccion nuevo.png)
+[fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/imagen%20seno.png)
 
 
