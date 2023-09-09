@@ -71,4 +71,22 @@ plt.plot(x_test, y_test, 'r.', label="Test")
 plt.legend()
 plt.show()
 ```
-![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/seno%20ruido.png)
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/seno%20separado.png)
+#### Diseñar y entrenar el modelo.
+
+Vamos a construir un modelo que tomará un valor de entrada (en este caso, x) y lo usaremos para predecir un valor de salida numérico (el seno de x). Este tipo de problema se llama regresión.
+Para lograr esto, vamos a crear una red neuronal simple. Utilizará capas de neuronas para intentar aprender cualquier patrón subyacente a los datos de entrenamiento, de modo que pueda hacer predicciones.
+Para empezar, definiremos dos capas. La primera capa toma una sola entrada (nuestro valor x) y la ejecuta a través de 16 neuronas. Según esta entrada, cada neurona se activará hasta cierto punto en función de su estado interno (sus valores de peso y sesgo). El grado de activación de una neurona se expresa como un número.
+Los números de activación de nuestra primera capa se alimentarán como entradas a nuestra segunda capa, que es una sola neurona. Aplicará sus propios pesos y sesgos a estas entradas y calculará su propia activación, que se generará como nuestro valor y.
+
+**Nota:** Para obtener más información sobre cómo funcionan las redes neuronales, puede explorar los laboratorios de código Learn TensorFlow.
+El código de la siguiente celda define nuestro modelo usando Keras, la API de alto nivel de TensorFlow para crear redes de aprendizaje profundo. Una vez definida la red, la compilamos, especificando parámetros que determinan cómo será entrenada:
+```
+from tensorflow.keras import layers
+modelo1= tf.keras.Sequential()
+modelo1.add(layers.Dense(16, activation='relu', input_shape=(1,)))
+modelo1.add(layers.Dense(1))
+modelo1.compile(optimizer='rmsprop', loss='mse', metrics=['mae'])
+modelo1.summary()
+```
+
