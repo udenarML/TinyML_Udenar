@@ -38,6 +38,6 @@ plt.rcParams["figure.figsize"] = (10,5)
 plt.plot(x_valores, y_valores,'b.')
 plt.show()
 ```
-![TFLM hello_world sinwave prediction VS actual values](imagenes/foto prediccion nuevo.png) 
+[fff](https://i.stack.imgur.com/dYSPA.jpg)
 
 
