@@ -120,6 +120,7 @@ plt.legend()
 plt.show()
 ```
 ![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/resultado.png)
+
 Para obtener más información sobre lo que está sucediendo, podemos trazar las predicciones de nuestra red para los datos de entrenamiento frente a los valores esperados:
 ```
 prediccion= modelo1.predict(x_train)
@@ -131,4 +132,17 @@ plt.plot(x_train, prediccion, 'r.', label='Prediccion')
 plt.legend()
 plt.show()
 ```
-![fff]()
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/foto%20prediccion.png)
+
+#### Modificacion del modelo.
+Para agrandar nuestro modelo, agreguemos una capa adicional de neuronas. La siguiente celda redefine nuestro modelo de la misma manera que antes, pero con una capa adicional de 16 neuronas en el medio:
+```
+modelo2 = tf.keras.Sequential()
+modelo2.add(layers.Dense(16, activation='relu', input_shape=(1,)))
+modelo2.add(layers.Dense(16, activation='relu'))
+modelo2.add(layers.Dense(1))
+modelo2.compile(optimizer='rmsprop', loss='mse', metrics=['mae'])
+modelo2.summary()
+```
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/foto%20prediccion.png)
+
