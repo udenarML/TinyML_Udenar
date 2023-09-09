@@ -38,6 +38,6 @@ plt.rcParams["figure.figsize"] = (10,5)
 plt.plot(x_valores, y_valores,'b.')
 plt.show()
 ```
-[fff](imagenes/foto prediccion nuevo.png)
+[fff](ejemplos/1 hello word/imagenes/foto prediccion nuevo.png)
 
 
