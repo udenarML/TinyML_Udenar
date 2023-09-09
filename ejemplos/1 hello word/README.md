@@ -40,4 +40,15 @@ plt.show()
 ```
 ![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/imagen%20seno.png)
 
+#### Agregamos un poco de ruido.
+Esto con el fin de corroborar la potencia y la eficacia de el modelo al tratar de predecir estos datos.
+Se agregó una señal pequeña de ruido aleatorio.
+
+```
+y_valores += 0.1*np.random.rand(*y_valores.shape)
+plt.rcParams["figure.figsize"] = (10,5)
+plt.plot(x_valores, y_valores, 'b.')
+plt.show()
+```
+![fff]()
 
