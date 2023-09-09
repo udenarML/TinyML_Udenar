@@ -89,4 +89,16 @@ modelo1.add(layers.Dense(1))
 modelo1.compile(optimizer='rmsprop', loss='mse', metrics=['mae'])
 modelo1.summary()
 ```
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/tabla%20arquitectura.PNG)
 
+#### Entrenamiento.
+Una vez que hemos definido el modelo, podemos usar nuestros datos para entrenarlo. El entrenamiento consiste en pasar un valor x a la red neuronal, comprobar en qué medida se desvía la salida de la red del valor y esperado y ajustar los pesos y sesgos de las neuronas para que sea más probable que la salida sea correcta la próxima vez.
+El entrenamiento ejecuta este proceso en el conjunto de datos completo varias veces, y cada ejecución completa se conoce como una época. El número de épocas a ejecutar durante el entrenamiento es un parámetro que podemos configurar.
+Durante cada época, los datos se ejecutan a través de la red en múltiples lotes. Cada lote, varias piezas de datos se pasan a la red, produciendo valores de salida. La corrección de estas salidas se mide en conjunto y los pesos y sesgos de la red se ajustan en consecuencia, una vez por lote. El tamaño del lote también es un parámetro que podemos establecer.
+
+El código de la siguiente celda usa los valores x e y de nuestros datos de entrenamiento para entrenar el modelo. Funciona durante 800 épocas, con 16 piezas de datos en cada lote. También pasamos algunos datos para usarlos para la validación. 
+```
+history_1 = modelo1.fit(x_train, y_train, epochs=800, batch_size=16, validation_data=(x_validate, y_validate))
+```
+
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/tabla%20arquitectura.PNG)
