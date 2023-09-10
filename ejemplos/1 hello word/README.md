@@ -268,10 +268,23 @@ print("El modelo cuantizado es de %d bytes" % quantized_model_size)
 diferencia = basic_model_size - quantized_model_size
 print("La diferencia es de %d bytes" % diferencia)
 ```
-![fff]()
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/diferencia%20peso.PNG)
 
 Nuestro modelo cuantificado es 152 bytes más pequeño que la versión original, lo cual es genial, pero es solo una pequeña reducción de tamaño. Con alrededor de 3 kilobytes, este modelo ya es tan pequeño que los pesos representan una pequeña proporción del tamaño total, lo que significa que la cuantificación solo tiene un efecto pequeño.
 
 Los modelos más complejos tienen muchos más pesos, lo que significa que el ahorro de espacio de la cuantización será mucho mayor, acercándose a 4x para los modelos más sofisticados.
 
 Independientemente, nuestro modelo cuantizado tardará menos tiempo en ejecutarse que la versión original, ¡lo cual es importante en un microcontrolador. 
+
+#### Escribir en un archivo C.
+
+El paso final en la preparación de nuestro modelo para usarlo con TensorFlow Lite para microcontroladores es convertirlo en un archivo fuente C. Puede ver un ejemplo de este formato en hello_world/sine_model_data.cc.
+
+Para hacerlo, podemos usar una utilidad de línea de comandos llamada xxd. La siguiente celda ejecuta xxd en nuestro modelo cuantificado e imprime la salida:
+```
+!apt-get -qq install xxd
+
+!xxd -i sine_model_quantized.tflite > sine_model_quantized.cc
+
+!cat sine_model_quantized.cc
+```
