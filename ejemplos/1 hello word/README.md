@@ -302,3 +302,10 @@ Con las librerías instaladas procedemos a escoger el ejemplo de la librería ll
 Luego de abrir el ejemplo nos trasladamos a la parte del documento “model.cpp” en donde se encuentra el modelo convertido. En esta parte debemos reemplazar este conjunto de datos hexadecimales por los datos que obtuvimos en nuestro modelo anteriormente creado.
 ![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/REEMPLAZAR.png)
 
+seguido de esto tenemos que reemplazar el valor de la variable g_model_len al valor que obtuvimos del tamaño del modelo cuantizado, asi queda:
+```
+const int g_model_len = 3040;
+```
+
+Finalmente compilamos el programa en la placa y observamos el resultado de la inferecia del modelo cuando se introducen datos de manera continua.
+![]()
