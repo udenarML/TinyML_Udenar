@@ -151,6 +151,25 @@ procedemos a entrenar este nuevo modelo.
 history_2 = modelo2.fit(x_train, y_train, epochs=600, batch_size=16, validation_data=(x_validate, y_validate))
 
 ```
-![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/tabla%20arquitectura%20nuevo.PNG)
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/foto%20entrenamiento%20nuevo.PNG)
+¡Todo esto significa que nuestra red parece estar funcionando bien! Para confirmar, verifiquemos sus predicciones con el conjunto de datos de prueba que reservamos anteriormente:
 
 
+```
+loss = modelo2.evaluate(x_test, y_test)
+prediccion = modelo2.predict(x_test)
+
+plt.clf()
+plt.title('Comparacion de los valores de entrada con el modelo terminado')
+plt.plot(x_test, y_test, 'b.', label='Actual')
+plt.plot(x_test, prediccion, 'r.', label='Predicted')
+plt.legend()
+plt.show()
+```
+
+![fff]()
+¡Mucho mejor! Las métricas de evaluación que imprimimos muestran que el modelo tiene una baja pérdida y MAE en los datos de prueba, y las predicciones se alinean visualmente con nuestros datos bastante bien.El modelo no es perfecto; sus predicciones no forman una curva sinusoidal suave.
+
+Sin embargo, una parte importante del aprendizaje automático es saber cuándo salir, y este modelo es lo suficientemente bueno para nuestro caso de uso, que es hacer que algunos LED parpadeen en un patrón agradable.
+### Convertir el modelo con tensorflow lite.
+Ahora tenemos un modelo aceptablemente preciso en la memoria. Sin embargo, para usar esto con TensorFlow Lite para microcontroladores, necesitaremos convertirlo al formato correcto y descargarlo como un archivo. Para hacer esto, usaremos TensorFlow Lite Converter. El convertidor genera un archivo en un formato especial que ahorra espacio para usar en dispositivos con limitaciones de memoria.
