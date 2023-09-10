@@ -156,14 +156,14 @@ history_2 = modelo2.fit(x_train, y_train, epochs=600, batch_size=16, validation_
 
 
 ```
-loss = modelo2.evaluate(x_test, y_test)
-prediccion = modelo2.predict(x_test)
-
-plt.clf()
-plt.title('Comparacion de los valores de entrada con el modelo terminado')
-plt.plot(x_test, y_test, 'b.', label='Actual')
-plt.plot(x_test, prediccion, 'r.', label='Predicted')
-plt.legend()
+loss= history_2.history['loss']
+val_loss= history_2.history['val_loss']
+epocas= range(1, len(loss) + 1)
+plt.plot(epocas, loss, 'g.', label='Training loss')
+plt.plot(epocas, val_loss, 'b.', label='Validation loss')
+plt.title('Training vs validation loss')
+plt.xlabel('Epocas')
+plt.ylabel('Loss')
 plt.show()
 ```
 
