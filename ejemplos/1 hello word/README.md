@@ -180,7 +180,7 @@ plt.plot(x_test, prediccion, 'r.', label='Predicted')
 plt.legend()
 plt.show()
 ```
-![]()
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/foto%20prediccion%20nuevo.png)
 Sin embargo, una parte importante del aprendizaje automático es saber cuándo salir, y este modelo es lo suficientemente bueno para nuestro caso de uso, que es hacer que algunos LED parpadeen en un patrón agradable.
 ### Convertir el modelo con tensorflow lite.
 Ahora tenemos un modelo aceptablemente preciso en la memoria. Sin embargo, para usar esto con TensorFlow Lite para microcontroladores, necesitaremos convertirlo al formato correcto y descargarlo como un archivo. Para hacer esto, usaremos TensorFlow Lite Converter. El convertidor genera un archivo en un formato especial que ahorra espacio para usar en dispositivos con limitaciones de memoria.
