@@ -297,8 +297,8 @@ En primer lugar, debemos instalar las librerías necesarias:
 - Librería para la tarjeta Raspberry Pi Pico. 
 - Librería de Tensorflow lite para Arduino.
 Con las librerías instaladas procedemos a escoger el ejemplo de la librería llamado “Hello World”.
-
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/ejemplo%20hello.png)
 
 Luego de abrir el ejemplo nos trasladamos a la parte del documento “model.cpp” en donde se encuentra el modelo convertido. En esta parte debemos reemplazar este conjunto de datos hexadecimales por los datos que obtuvimos en nuestro modelo anteriormente creado.
-
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/REEMPLAZAR.png)
 
