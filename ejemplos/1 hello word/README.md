@@ -288,3 +288,6 @@ Para hacerlo, podemos usar una utilidad de línea de comandos llamada xxd. La si
 
 !cat sine_model_quantized.cc
 ```
+![fff]()
+
+
