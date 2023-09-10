@@ -255,3 +255,23 @@ plt.legend()
 plt.show()
 ```
 ![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/resultado%20cuantificacion.png)
+Podemos ver en el gráfico que las predicciones para el modelo original, el modelo convertido y el modelo cuantificado son lo suficientemente cercanas como para ser casi indistinguibles. ¡Esto significa que nuestro modelo cuantificado está listo para usar!
+
+Podemos imprimir la diferencia en el tamaño del archivo:
+
+```
+import os
+basic_model_size = os.path.getsize("sine_model.tflite")
+print("El modelo basico es de %d  bytes" % basic_model_size)
+quantized_model_size = os.path.getsize("sine_model_quantized.tflite")
+print("El modelo cuantizado es de %d bytes" % quantized_model_size)
+diferencia = basic_model_size - quantized_model_size
+print("La diferencia es de %d bytes" % diferencia)
+```
+![fff]()
+
+Nuestro modelo cuantificado es 152 bytes más pequeño que la versión original, lo cual es genial, pero es solo una pequeña reducción de tamaño. Con alrededor de 3 kilobytes, este modelo ya es tan pequeño que los pesos representan una pequeña proporción del tamaño total, lo que significa que la cuantificación solo tiene un efecto pequeño.
+
+Los modelos más complejos tienen muchos más pesos, lo que significa que el ahorro de espacio de la cuantización será mucho mayor, acercándose a 4x para los modelos más sofisticados.
+
+Independientemente, nuestro modelo cuantizado tardará menos tiempo en ejecutarse que la versión original, ¡lo cual es importante en un microcontrolador. 
