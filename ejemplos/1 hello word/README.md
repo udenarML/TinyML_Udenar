@@ -72,7 +72,7 @@ plt.legend()
 plt.show()
 ```
 ![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/seno%20separado.png)
-#### Diseñar y entrenar el modelo.
+### Diseñar y entrenar el modelo.
 
 Vamos a construir un modelo que tomará un valor de entrada (en este caso, x) y lo usaremos para predecir un valor de salida numérico (el seno de x). Este tipo de problema se llama regresión.
 Para lograr esto, vamos a crear una red neuronal simple. Utilizará capas de neuronas para intentar aprender cualquier patrón subyacente a los datos de entrenamiento, de modo que pueda hacer predicciones.
@@ -104,7 +104,7 @@ history_1 = modelo1.fit(x_train, y_train, epochs=800, batch_size=16, validation_
 ![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/tabla%20imagen%20entrenamiento.PNG
 )
 
-#### Evaluar el desempeño.
+### Evaluar el desempeño.
 Durante el entrenamiento, el rendimiento del modelo se mide constantemente con nuestros datos de entrenamiento y los datos de validación que reservamos anteriormente. El entrenamiento produce un registro de datos que nos dice cómo cambió el rendimiento del modelo a lo largo del proceso de entrenamiento.
 
 Las siguientes celdas mostrarán algunos de esos datos en forma gráfica:
@@ -145,5 +145,7 @@ modelo2.compile(optimizer='rmsprop', loss='mse', metrics=['mae'])
 modelo2.summary()
 ```
 ![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/tabla%20arquitectura%20nuevo.PNG)
+
+procedemos a entrenar este nuevo modelo.
 
 
