@@ -187,3 +187,71 @@ plt.show()
 Sin embargo, una parte importante del aprendizaje automático es saber cuándo salir, y este modelo es lo suficientemente bueno para nuestro caso de uso, que es hacer que algunos LED parpadeen en un patrón agradable.
 ### Convertir el modelo con tensorflow lite.
 Ahora tenemos un modelo aceptablemente preciso en la memoria. Sin embargo, para usar esto con TensorFlow Lite para microcontroladores, necesitaremos convertirlo al formato correcto y descargarlo como un archivo. Para hacer esto, usaremos TensorFlow Lite Converter. El convertidor genera un archivo en un formato especial que ahorra espacio para usar en dispositivos con limitaciones de memoria.
+
+Dado que este modelo se implementará en un microcontrolador, ¡queremos que sea lo más pequeño posible! Una técnica para reducir el tamaño de los modelos se llama cuantización. Reduce la precisión de los pesos del modelo, lo que ahorra memoria, a menudo sin mucho impacto en la precisión. Los modelos cuantificados también se ejecutan más rápido, ya que los cálculos necesarios son más simples.
+
+TensorFlow Lite Converter puede aplicar cuantización mientras convierte el modelo. En la siguiente celda, convertiremos el modelo dos veces, una con cuantización y otra no:
+
+```
+converter = tf.lite.TFLiteConverter.from_keras_model(modelo2)
+tflite_model = converter.convert()
+open("sine_model.tflite", "wb").write(tflite_model)
+converter = tf.lite.TFLiteConverter.from_keras_model(modelo2)
+converter.optimizations = [tf.lite.Optimize.DEFAULT]
+def representative_dataset_generator():
+  for value in x_test:
+    yield [np.array(value, dtype=np.float32, ndmin=2)]
+converter.representative_dataset = representative_dataset_generator
+tflite_model = converter.convert()
+open("sine_model_quantized.tflite", "wb").write(tflite_model)
+```
+Para crear un modelo cuantificado que se ejecute de la manera más eficiente posible, debemos proporcionar un "conjunto de datos representativo", un conjunto de números que representan el rango completo de valores de entrada en el conjunto de datos en el que se entrenó el modelo.
+
+En la celda anterior, podemos usar los valores x de nuestro conjunto de datos de prueba como un conjunto de datos representativo. Definimos una función, represent_dataset_generator(), que usa el operador de rendimiento para devolverlos uno por uno.
+
+#### Probar los modelos convertidos
+
+Para demostrar que estos modelos siguen siendo precisos después de la conversión y la cuantificación, los usaremos para hacer predicciones y compararlas con los resultados de nuestras pruebas:
+```
+#Instanciar un intérprete para cada modelo
+sine_model = tf.lite.Interpreter('sine_model.tflite')
+sine_model_quantized = tf.lite.Interpreter('sine_model_quantized.tflite')
+
+#Asignar memoria para cada modelo
+sine_model.allocate_tensors()
+sine_model_quantized.allocate_tensors()
+
+#Obtener índices de los tensores de entrada y salida
+sine_model_input_index = sine_model.get_input_details()[0]["index"]
+sine_model_output_index = sine_model.get_output_details()[0]["index"]
+sine_model_quantized_input_index = sine_model_quantized.get_input_details()[0]["index"]
+sine_model_quantized_output_index = sine_model_quantized.get_output_details()[0]["index"]
+
+# Crear matrices para almacenar los resultados
+sine_model_predictions = []
+sine_model_quantized_predictions = []
+
+# Ejecute el intérprete de cada modelo para cada valor y almacene los resultados en matrices
+
+for x_value in x_test:
+  x_value_tensor = tf.convert_to_tensor([[x_value]], dtype= np.float32)
+  sine_model.set_tensor(sine_model_input_index, x_value_tensor)
+  sine_model.invoke()
+  sine_model_predictions.append(sine_model.get_tensor(sine_model_output_index)[0])
+
+  sine_model_quantized.set_tensor(sine_model_quantized_input_index, x_value_tensor)
+  sine_model_quantized.invoke()
+  sine_model_quantized_predictions.append(sine_model_quantized.get_tensor(sine_model_quantized_output_index)[0])
+
+
+plt.clf()
+plt.rcParams["figure.figsize"] = (20,14)
+plt.title('Comparacion entre el modelo normal y el cuantizado')
+plt.plot(x_test, y_test, 'bo', label='Actual')
+plt.plot(x_test, prediccion, 'ro', label='Prediccion original')
+plt.plot(x_test, sine_model_predictions, 'bx', label='Predicion lite')
+plt.plot(x_test, sine_model_quantized_predictions, 'gx', label='Predicion lite quantized')
+plt.legend()
+plt.show()
+```
+![]()
