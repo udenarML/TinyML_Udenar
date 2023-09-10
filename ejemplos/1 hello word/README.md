@@ -147,5 +147,10 @@ modelo2.summary()
 ![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/tabla%20arquitectura%20nuevo.PNG)
 
 procedemos a entrenar este nuevo modelo.
+```
+history_2 = modelo2.fit(x_train, y_train, epochs=600, batch_size=16, validation_data=(x_validate, y_validate))
+
+```
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/tabla%20arquitectura%20nuevo.PNG)
 
 
