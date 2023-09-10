@@ -254,4 +254,4 @@ plt.plot(x_test, sine_model_quantized_predictions, 'gx', label='Predicion lite q
 plt.legend()
 plt.show()
 ```
-![]()
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/resultado%20cuantificacion.png)
