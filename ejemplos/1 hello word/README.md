@@ -288,6 +288,17 @@ Para hacerlo, podemos usar una utilidad de línea de comandos llamada xxd. La si
 
 !cat sine_model_quantized.cc
 ```
-![fff]()
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/MODELO%20HEXA.PNG)
+
+## Implementacion del modelo en microcontroladores.
+Para esta parte hemos usado el IDE de Arduino y las librerías de Tensorflow.
+La placa que estaremos usando para este ejemplo es la Raspberry Pi Pico. Pero funciona del mismo modo en para las otras placas mencionadas.
+En primer lugar, debemos instalar las librerías necesarias:
+- Librería para la tarjeta Raspberry Pi Pico. 
+- Librería de Tensorflow lite para Arduino.
+Con las librerías instaladas procedemos a escoger el ejemplo de la librería llamado “Hello World”.
+
+
+Luego de abrir el ejemplo nos trasladamos a la parte del documento “model.cpp” en donde se encuentra el modelo convertido. En esta parte debemos reemplazar este conjunto de datos hexadecimales por los datos que obtuvimos en nuestro modelo anteriormente creado.
 
 
