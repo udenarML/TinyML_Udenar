@@ -308,4 +308,4 @@ const int g_model_len = 3040;
 ```
 
 Finalmente compilamos el programa en la placa y observamos el resultado de la inferecia del modelo cuando se introducen datos de manera continua.
-![]()
+![fff](https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/1%20hello%20word/imagenes/onda%20seno%20arduino.PNG)
