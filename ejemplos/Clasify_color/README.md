@@ -14,8 +14,8 @@ Los objetos son rollos de cinta de diferentes colores (Rojo, Azul, Amarillo, Ver
 Para desarrollar este ejemplo debemos tener instalado algunas herramientas como son:
 
 -	 [Librería para la tarjeta Arduino Nano 33 Ble Sense.](#Librería-para-la-tarjeta-Arduino-Nano-33-Ble-Sense)
--	Librería para la tarjeta Esp32.
--	Librería para la tarjeta Raspberry Pi Pico.
+-	[Librería para la tarjeta Esp32.](#Librería-para-la-tarjeta-Esp32)
+-	[Librería para la tarjeta Raspberry Pi Pico.](#Librería-para-la-tarjeta-Raspberry-Pi-Pico)
 -	Coolterm.
 -	Entorno de Google Colaboratory.
 ## Librería para la tarjeta Arduino Nano 33 Ble Sense.
