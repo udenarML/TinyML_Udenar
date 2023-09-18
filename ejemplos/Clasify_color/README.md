@@ -3,7 +3,7 @@ Este ejemplo muestra cómo utilizar un conjunto de datos de un sensor para crear
 Se ha creado diferentes carpetas para cada placa ya que algunas librerías difieren entre placas.
 ## Características.
 El ejemplo usa el sensor APDS9960 para capturar el color de diferentes objetos. Esto como una demostración de cómo podríamos diferenciar objetos de diferentes colores o materiales.
-Esta idea se basa del ejemplo “Color Clasify”. Vemos una oportunidad de usar el TinyML para la clasificación de objetos.
+Esta idea se basa del ejemplo [Fruit to Emoji](https://github.com/arduino/ArduinoTensorFlowLiteTutorials/tree/master/FruitToEmoji). Vemos una oportunidad de usar el TinyML para la clasificación de objetos.
 
 Opciones como la programación convencional resulta más compleja para sistemas que se pueden ver afectados por factores externos así pues, factores como la iluminación podrían dar resultados diferentes en el color capturado durante transcurso del día.
 Debido a esto se decidió crear un modelo de machine learning que busque reconocer colores de un objeto a través de un entrenamiento con una base de datos de colores que abarque todos esos cambios posibles.
