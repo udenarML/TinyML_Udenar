@@ -17,7 +17,7 @@ Para desarrollar este ejemplo debemos tener instalado algunas herramientas como 
 -	[Librería para la tarjeta Esp32.](#Librería-para-la-tarjeta-Esp32)
 -	[Librería para la tarjeta Raspberry Pi Pico.](#Librería-para-la-tarjeta-Raspberry-Pi-Pico)
 -	[Coolterm.](#coolterm)
--	Entorno de Google Colaboratory.
+-	[Entorno de Google Colaboratory.](#Entorno-de-Google-Colaboratory.)
 ## Librería para la tarjeta Arduino Nano 33 Ble Sense.
 Para realizar la instalación debemos abrir el IDE de Arduino y posteriormente remitirnos al gestor de tarjetas de este modo:
 - Herramientas.
@@ -115,4 +115,17 @@ Por ultimo debemos abrir la aplicación de coolterm que aparece en la carpeta, a
 ![vista coolterm]( https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/Clasify_color/imagenes/vista_coolterm.PNG) 
 
 
+## Entorno de Google Colaboratory.
+
+Para la ejecución de los códigos de Python que usamos para el diseño y entrenamiento de los modelos de machine learning, hacemos uso de la herramienta en línea de Google Colaboratory o también llamado “Colab”. 
+La ventaja que trae usar Colab es que no necesitas descargar nada, solo desde el navegador puedes realizar toda la programación en un servidor remoto con altas prestaciones de cómputo.
+Para usar esta herramienta partimos de que tenemos que poseer una cuenta de Gmail para registrarnos. Continuando, debemos ir a Google drive y cuando estemos en nuestra unidad procedemos a ir a la parte de “Nuevo”. Ahí debemos descender y buscar la opcion “Mas” y finalmente escojemos la opcion de “Google Colaboratory” de esta manera.
+
+![colab1]( https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/Clasify_color/imagenes/colab1.png)
+
+El aspecto de la pagina de colab es similar a esta:
+
+![conectar_colab]( https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/Clasify_color/imagenes/conectar_colab.png)
+
+Así pues, ya podemos crear nuestros códigos de Python, por último, debemos conectarnos al servidor para poder ejecutar las celdas.
 
