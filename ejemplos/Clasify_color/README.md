@@ -16,7 +16,7 @@ Para desarrollar este ejemplo debemos tener instalado algunas herramientas como 
 -	 [Librería para la tarjeta Arduino Nano 33 Ble Sense.](#Librería-para-la-tarjeta-Arduino-Nano-33-Ble-Sense)
 -	[Librería para la tarjeta Esp32.](#Librería-para-la-tarjeta-Esp32)
 -	[Librería para la tarjeta Raspberry Pi Pico.](#Librería-para-la-tarjeta-Raspberry-Pi-Pico)
--	Coolterm.
+-	[Coolterm.](#coolterm)
 -	Entorno de Google Colaboratory.
 ## Librería para la tarjeta Arduino Nano 33 Ble Sense.
 Para realizar la instalación debemos abrir el IDE de Arduino y posteriormente remitirnos al gestor de tarjetas de este modo:
@@ -94,3 +94,25 @@ Así con este cambio realizamos la compilación del ejemplo. Como la placa Raspb
 ![puerto_pico]( https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/Clasify_color/imagenes/puerto_pico.png)
 
 Finalmente debemos ver que el led parpadea en la placa.
+
+## coolterm.
+La aplicación de coolterm es la herramienta que usaremos para realizar la captura de los datos. Esta aplicación es un tipo de terminal para el control del puerto serial, es gratuita y muy fácil de usar.
+Para realizar la descarga debemos buscar en el navegador el nombre de “coolterm”.
+Debemos escoger la siguiente opción:
+
+¡[coolterm_pagina]( https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/Clasify_color/imagenes/coolterm_pagina.PNG)
+
+Esta es la pagina oficial del desarrollador de la aplicación, cuando accedamos a la pagina debemos descender y encontrar las opciones de descarga.
+
+¡[descargar_coolterm]( https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/Clasify_color/imagenes/descargar_coolterm.png)
+
+El sistema operativo que estamos usando es Windows 10 de 64 bits así que escogemos esa opción. Cuando tengamos completado la descarga debemos tener un archivo comprimido, este archivo lo descomprimiremos. De esta manera tendremos una carpeta que contiene los archivos necesarios para el programa, asi que no debemos instalar nada.
+
+¡[carpeta collterm]( https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/Clasify_color/imagenes/carpeta_coolterm.PNG)
+
+Por ultimo debemos abrir la aplicación de coolterm que aparece en la carpeta, al abrir el programa tenemos la interfaz del programa como se muestra acontinuacion.
+
+¡[vista coolterm]( https://github.com/udenarML/TinyML_Udenar/blob/main/ejemplos/Clasify_color/imagenes/vista_coolterm.PNG) 
+
+
+
